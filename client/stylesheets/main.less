@@ -1,0 +1,51 @@
+// General styles, e. g. for the body tag
+@import 'helpers';
+@import 'variables';
+@import 'lib/elements';
+
+/* -------------------
+    Main Content
+   ------------------- */
+
+body, #main {
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+    color: @primaryFontColor;
+    font-family: 'Fauna One', serif;
+}
+
+a {
+    color: inherit;
+    transition: 0.3s color;
+
+    &:hover {
+        color: @primaryLinkHoverColor;
+    }
+}
+
+.icon {
+    &.orange {
+        color: @html5Orange;
+    }
+}
+
+.ui.header {
+    font-family: 'Glegoo', serif;
+}
+
+.site-wrapper {
+    margin: 0 auto;
+    max-width: @largeDesktopWidth;
+}
+
+/* -------------------
+    Footer
+   ------------------- */
+.padding-wrapper.footer {
+    .border-radius(0px);
+
+    a:hover {
+        color: @secondaryLinkHoverColor;
+    }
+}

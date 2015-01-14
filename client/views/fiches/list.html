@@ -1,0 +1,12 @@
+<template name="fichesList">
+	<table>
+		<thead>
+			<th>Amendement</th>
+		</thead>
+		<tbody>
+			{{#each fiches}}
+				{{> fichesItem}}
+			{{/each}}
+		</tbody>
+	</table>
+</template>
