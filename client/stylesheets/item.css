@@ -8,6 +8,19 @@ i.icon.unknown::before {
 }
 
 textarea {
-	width: 60em;
-	height: 12em;
+	width: 100%;
+	min-height: 12em;
+	resize: vertical;
+}
+
+table {
+	width: 100%;
+}
+
+tbody th {
+	width: 15%;
+}
+
+tbody .position {
+	width: 5%;
 }
