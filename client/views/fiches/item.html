@@ -1,11 +1,7 @@
 <template name="fichesItem">
-	<tr>
-		<td>{{amendement}}</td>
+	<tr class="{{status}}">
+		<th>{{amendement}}</th>
+		<td>{{content}}</td>
+		<td><i class="{{iconName status}} icon" title="{{status}}"></i></td>
 	</tr>
-	{{!-- {{#autoForm collection="Fiches" type="update"}}
-		{{> afQuickFields}}
-		<div>
-			<button type="submit">Mettre à jour</button>
-		</div>
-	{{/autoForm}} --}}
 </template>
