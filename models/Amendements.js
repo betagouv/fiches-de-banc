@@ -8,9 +8,11 @@ Amendements.attachSchema(
 		},
 		talkingPoint: {
 			type: String,
+			optional: true
 		},
 		position: {
 			type: String,
+			optional: true,
 			allowedValues: [ 'for', 'against' ]
 		}
 	})

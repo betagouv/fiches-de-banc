@@ -1,8 +1,9 @@
 Template.amendementsItem.helpers({
 	iconName: function(position) {
 		return {
-			accepted: 'checkmark',
-			rejected: 'remove'
+			'undefined'	: 'unknown',
+			'for'		: 'checkmark',
+			'against'	: 'x'
 		}[position];
 	}
 });

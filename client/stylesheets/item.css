@@ -2,6 +2,11 @@
 	cursor: pointer;
 }
 
+i.icon.unknown::before {
+	content: "?";
+	font-weight: bold;
+}
+
 textarea {
 	width: 60em;
 	height: 12em;
