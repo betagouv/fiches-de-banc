@@ -1,3 +1,8 @@
 .status {
 	cursor: pointer;
 }
+
+textarea {
+	width: 60em;
+	height: 12em;
+}

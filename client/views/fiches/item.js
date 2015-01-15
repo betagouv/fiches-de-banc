@@ -16,5 +16,9 @@ Template.fichesItem.events({
 		var newStatus = statuses[(currentStatusIndex + 1) % statuses.length];
 
 		Fiches.update(template.data._id, { $set: { status: newStatus } });
-	}
+	},
+
+	'keyup textarea': _.debounce(function(event, template) {
+		Fiches.update(template.data._id, { $set: { content: event.target.value } });
+	}, 500)
 });
