@@ -1,16 +1,17 @@
-Fiches = new Mongo.Collection('Fiches');
+Amendements = new Mongo.Collection('Amendements');
 
-Fiches.attachSchema(
+Amendements.attachSchema(
 	new SimpleSchema({
-		amendement: {
-			type: String
-		},
 		content: {
-			type: String
+			type: Object,
+			blackbox: true
 		},
-		status: {
+		talkingPoint: {
 			type: String,
-			allowedValues: [ 'accepted', 'rejected' ]
+		},
+		position: {
+			type: String,
+			allowedValues: [ 'for', 'against' ]
 		}
 	})
 );
@@ -18,7 +19,7 @@ Fiches.attachSchema(
 // Collection2 already does schema checking
 // Add custom permission rules if needed
 if (Meteor.isServer) {
-	Fiches.allow({
+	Amendements.allow({
 		insert : function () {
 			return true;
 		},

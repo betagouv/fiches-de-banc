@@ -1,4 +1,4 @@
 // Home Route
 Router.route('/', function () {
-	this.render('fichesList');
+	this.render('amendementsList');
 });
