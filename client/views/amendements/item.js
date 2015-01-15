@@ -20,6 +20,6 @@ Template.amendementsItem.events({
 	},
 
 	'keyup textarea': _.debounce(function(event, template) {
-		Amendements.update(template.data._id, { $set: { content: event.target.value } });
 	}, 500)
+		Amendements.update(template.data._id, { $set: { talkingPoint: event.target.value } });
 });
