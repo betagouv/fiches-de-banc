@@ -1,35 +1,20 @@
-Template.header.created = function () {
-  Session.set('isActive', false);
-  Session.set('showLogin', false);
-};
+function fichesLeft() {
+	return Amendements.find({ talkingPoint: { $exists: false } }).count();
+}
 
-Template['header'].helpers({
-  showLogin: function () {
-    return Session.get('showLogin');
-  },
-  isActive: function () {
-    return Session.get('isActive') ? 'active' : '';
-  },
-  animateClass: function () {
-    return Session.get('isActive') ? 'fadeIn' : 'fadeOut';
-  },
-  iconClass: function () {
-    return Meteor.user() ? 'user' : 'sign in';
-  }
+Template.header.helpers({
+	still: function() {
+		if (fichesLeft() == 0)
+			return 'Ça y est ! ';
+		if (fichesLeft() < 100)
+			return 'Plus que';
+
+		return 'Encore';
+	},
+	fichesCount: function () {
+		return Amendements.find().count();
+	},
+	fichesLeft: function () {
+		return fichesLeft();
+	}
 });
-
-Template['header'].events({
-  'click .resize.button' : function () {
-    var showLogin = Session.get('showLogin');
-
-    Session.set('isActive', !Session.get('isActive'));
-
-    setTimeout(function () {
-      Session.set('showLogin', !Session.get('showLogin'));
-    }, 600);
-  },
-  'click .log-out.button' : function () {
-    Meteor.logout();
-  }
-});
-
