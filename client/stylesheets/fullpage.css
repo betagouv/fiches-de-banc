@@ -38,11 +38,9 @@
 	border-top: 1px solid #c02626;
 }
 
-
-
 #fullpage #position {
 	font-size: 200%;
-	padding: .25em 0;
+	margin: .25em 0;
 }
 
 #fullpage #positionValue {

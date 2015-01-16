@@ -17,8 +17,20 @@
 			{{talkingPoint}}
 		</div>
 
-		<footer class="ui {{position}}">
+		<footer class="ui segment {{position}}">
+			{{#if previous}}
+				<p class="ui bottom left attached label">
+					<a href="{{pathFor 'amendementsFullpage' _id=previous._id}}">❮&nbsp;Amendement {{previous._id}}</a>
+				</p>
+			{{/if}}
+
 			<p id="position">Position&nbsp;:&nbsp;<span id="positionValue">{{_ position}}</span></p>
+
+			{{#if next}}
+				<p class="ui bottom right attached label">
+					<a href="{{pathFor 'amendementsFullpage' _id=next._id}}">Amendement {{next._id}}&nbsp;❯</a>
+				</p>
+			{{/if}}
 		</footer>
 	</article>
 </template>
