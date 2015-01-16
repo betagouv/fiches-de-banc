@@ -5,6 +5,10 @@ Template.amendementsItem.helpers({
 			'for'		: 'checkmark',
 			'against'	: 'x'
 		}[position];
+	},
+
+	index: function() {
+		return Number(Template.instance().data.content.position.split('/')[0]);
 	}
 });
 

@@ -21,6 +21,6 @@ tbody th {
 	width: 15%;
 }
 
-tbody .position {
+tbody .index, tbody .position, tbody .group, tbody .author {
 	width: 5%;
 }
