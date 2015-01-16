@@ -2,8 +2,8 @@ Template.amendementsItem.helpers({
 	iconName: function(position) {
 		return {
 			'undefined'	: 'unknown',
-			'for'		: 'checkmark',
-			'against'	: 'x'
+			'positive'	: 'checkmark',
+			'negative'	: 'x'
 		}[position];
 	},
 

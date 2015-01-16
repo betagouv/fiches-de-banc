@@ -13,7 +13,7 @@ Amendements.attachSchema(
 		position: {
 			type: String,
 			optional: true,
-			allowedValues: [ 'for', 'against' ]
+			allowedValues: [ 'positive', 'negative' ]
 		}
 	})
 );

@@ -22,7 +22,7 @@ Fixtures.Amendements = [
 			'position': '0001/1731'
 		},
 		talkingPoint: 'Ceci est la fiche de banc de l’amendement SPE862.',
-		position: 'for'
+		position: 'positive'
 	},
 	{
 		_id: 'SPE1263',
@@ -45,7 +45,7 @@ Fixtures.Amendements = [
 			'position': '0002/1731'
 		},
 		talkingPoint: 'Ceci est la fiche de banc de l’amendement SPE1263.',
-		position: 'against'
+		position: 'negative'
 	}
 
 ];
