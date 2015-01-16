@@ -19,7 +19,7 @@ Fixtures.Amendements = [
 			'discussionIdentique': '',
 			'discussionIdentiqueAmdtPositon': '',
 			'discussionIdentiqueSsAmdtPositon': '',
-			'position': '0001/1731'
+			'position': 1
 		},
 		talkingPoint: 'Ceci est la fiche de banc de l’amendement SPE862.',
 		position: 'positive'
@@ -42,7 +42,7 @@ Fixtures.Amendements = [
 			'discussionIdentique': '',
 			'discussionIdentiqueAmdtPositon': '',
 			'discussionIdentiqueSsAmdtPositon': '',
-			'position': '0002/1731'
+			'position': 2
 		},
 		talkingPoint: 'Ceci est la fiche de banc de l’amendement SPE1263.',
 		position: 'negative'

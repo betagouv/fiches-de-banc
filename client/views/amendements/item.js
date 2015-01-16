@@ -5,10 +5,6 @@ Template.amendementsItem.helpers({
 			'positive'	: 'checkmark',
 			'negative'	: 'x'
 		}[position];
-	},
-
-	index: function() {
-		return Number(Template.instance().data.content.position.split('/')[0]);
 	}
 });
 
