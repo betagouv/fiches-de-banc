@@ -1,13 +1,13 @@
 <template name="basicLayout">
-	<div id="main">
-		<header>
-			{{> header}}
-		</header>
+	<header>
+		{{> header}}
+	</header>
 
-			{{> yield}}
+	<main class="dimmable">
+		{{> yield}}
+	</main>
 
-		<footer>
-			{{> footer}}
-		</footer>
-	</div>
+	<footer>
+		{{> footer}}
+	</footer>
 </template>
