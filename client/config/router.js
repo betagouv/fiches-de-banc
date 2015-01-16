@@ -1,4 +1,5 @@
 Router.configure({
 	layoutTemplate: 'basicLayout',
-	notFoundTemplate: 'notFound'
+	notFoundTemplate: 'notFound',
+	waitOn: function() { return Meteor.subscribe('AmendementsByPosition') }
 });

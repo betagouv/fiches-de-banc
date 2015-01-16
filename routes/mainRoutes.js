@@ -1,4 +1,5 @@
 // Home Route
-Router.route('/', function () {
-	this.render('amendementsList');
+Router.route('/', {
+	name: 'amendementsList',
+	data: function() { return Amendements.find() }
 });
