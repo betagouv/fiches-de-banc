@@ -18,9 +18,11 @@ Template.header.helpers({
 	fichesCount: function () {
 		var leftRatio = fichesLeft() / fichesCount();
 
-		$(Template.instance().find('.progress')).progress({
-			percent: Math.round(100 - leftRatio * 100)
-		});
+		_.debounce(function() {
+			$(Template.instance().find('.progress')).progress({
+				percent: Math.round(100 - leftRatio * 100)
+			});
+		}, 500);
 
 		return fichesCount();
 	},
