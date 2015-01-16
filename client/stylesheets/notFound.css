@@ -1,0 +1,9 @@
+.backlink {
+	text-align: center;
+}
+
+.backlink a {
+	color: blue;
+	text-decoration: underline;
+	pointer: cursor;
+}
