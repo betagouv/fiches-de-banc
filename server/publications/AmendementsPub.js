@@ -1,3 +1,3 @@
 Meteor.publish('AmendementsByPosition', function () {
-	return Amendements.find({}, { sort: { 'amendement.position': 1 } });
+	return Amendements.find({}, { sort: { 'content.position': 1 } });
 });
