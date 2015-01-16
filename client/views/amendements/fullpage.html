@@ -1,0 +1,24 @@
+<template name="amendementsFullpage">
+	<article id="fullpage" class="ui segment">
+		<header>
+			<p class="ui top left attached label statistic">
+				<span class="label">Article</span>
+				<span class="value text">{{article}}</span>
+			</p>
+			<p class="ui top right attached label statistic">
+				<span class="label">Amendement</span>
+				<span class="value text">{{_id}}</span>
+			</p>
+			<h2 id="author">Déposé par {{content.auteurLabelFull}}</h2>
+		</header>
+
+		<h3>Éléments de langage</h3>
+		<div id="talkingPoint">
+			{{talkingPoint}}
+		</div>
+
+		<footer class="ui {{position}}">
+			<p id="position">Position&nbsp;:&nbsp;<span id="positionValue">{{_ position}}</span></p>
+		</footer>
+	</article>
+</template>

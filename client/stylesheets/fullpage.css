@@ -1,0 +1,50 @@
+#fullpage {
+	height: 100%;
+}
+
+#fullpage #author {
+	margin-top: .5em;
+	text-align: center;
+}
+
+#fullpage #talkingPoint {
+	font-size: 130%;
+	columns: 2;
+}
+
+#fullpage footer {
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+	left: 0;
+	text-align: center;
+}
+
+#fullpage footer {
+	background: #fff9d7;
+	color: #6e5f00;
+	border-top: 1px solid #6e5f00;
+}
+
+.positive, #fullpage footer.positive {
+	background: #e3ffd8;
+	color: #376c38;
+	border-top: 1px solid #376c38;
+}
+
+.negative, #fullpage footer.negative {
+	background-color: #ffe1e1;
+	color: #c02626;
+	border-top: 1px solid #c02626;
+}
+
+
+
+#fullpage #position {
+	font-size: 200%;
+	padding: .25em 0;
+}
+
+#fullpage #positionValue {
+	font-weight: bold;
+}
