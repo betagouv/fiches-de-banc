@@ -2,6 +2,10 @@
 	height: 100%;
 }
 
+#fullpage h2 {
+	font-weight: lighter;
+}
+
 #fullpage #author {
 	margin-top: .5em;
 	text-align: center;
