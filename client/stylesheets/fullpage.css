@@ -6,6 +6,12 @@
 	font-weight: lighter;
 }
 
+#fullpage iframe {
+	margin: 0;
+	width: 100%;
+	height: 50%;
+}
+
 #fullpage #author {
 	margin-top: .5em;
 	text-align: center;
