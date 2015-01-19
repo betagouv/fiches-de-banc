@@ -1,16 +1,14 @@
 Metadata = new Mongo.Collection('Metadata');
 
 
+function yes() {
+	return true;
+}
+
 if (Meteor.isServer) {
 	Metadata.deny({
-		insert : function () {
-			return true;
-		},
-		update : function () {
-			return true;
-		},
-		remove : function () {
-			return true;
-		}
+		insert: yes,
+		update: yes,
+		remove: yes
 	});
 }
