@@ -1,10 +1,46 @@
 <template name="amendementsItem">
 	<tr class="{{position}}">
-		<td class="index">{{content.position}}</td>
-		<th class="id">{{_id}}</th>
-		<td class="author">{{content.auteurLabelFull}}</td>
-		<td class="group">{{content.auteurGroupe}}</td>
-		<td class="position"><i class="{{iconName position}} icon" title="{{position}}"></i></td>
-		<td class="talkingPoint"><textarea value="{{talkingPoint}}"></textarea></td>
+		<td class="index">
+			{{#if _id}}
+				{{content.position}}
+			{{else}}
+				N° d'ordre
+			{{/if}}
+		</td>
+		<th class="id">
+			{{#if _id}}
+				{{_id}}
+			{{else}}
+				Amendement
+			{{/if}}
+		</th>
+		<td class="author">
+			{{#if _id}}
+				{{content.auteurLabelFull}}
+			{{else}}
+				Auteur
+			{{/if}}
+		</td>
+		<td class="group">
+			{{#if _id}}
+				{{content.auteurGroupe}}
+			{{else}}
+				Groupe
+			{{/if}}
+		</td>
+		<td class="position">
+			{{#if _id}}
+				<i class="{{iconName position}} icon" title="{{position}}"></i>
+			{{else}}
+				Position
+			{{/if}}
+		</td>
+		<td class="talkingPoint">
+			{{#if _id}}
+				<textarea value="{{talkingPoint}}"></textarea>
+			{{else}}
+				Éléments de langage
+			{{/if}}
+		</td>
 	</tr>
 </template>

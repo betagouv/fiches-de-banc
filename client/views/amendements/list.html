@@ -1,12 +1,7 @@
 <template name="amendementsList">
 	<table>
 		<thead>
-			<th>N° d'ordre</th>
-			<th>Amendement</th>
-			<th>Auteur</th>
-			<th>Groupe</th>
-			<th>Position</th>
-			<th>Éléments de langage</th>
+			{{> amendementsItem}}
 		</thead>
 		<tbody>
 			{{#each this}}
