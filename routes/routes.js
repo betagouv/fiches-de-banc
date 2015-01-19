@@ -1,10 +1,18 @@
 Router.route('/', {
-	name: 'amendementsList',
-	data: function() { return Amendements.find() }
+	name			: 'amendementsList',
+	layoutTemplate	: 'editionLayout',
+	waitOn			: function() { return Meteor.subscribe('AmendementsByPosition') },
+	data			: function() { return Amendements.find() }
 });
 
 Router.route('/amendement/:_id', {
-	layoutTemplate: null,
-	name: 'amendementsFullpage',
-	data: function() { return Amendements.findOne(this.params._id) }
+	name			: 'amendementsFullpage',
+	data			: function() {
+		Meteor.subscribe('AmendementsByPosition');
+		return Amendements.findOne(this.params._id);
+	}
+});
+
+Router.route('/connexion', {
+	name			: 'login'
 });

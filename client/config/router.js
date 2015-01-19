@@ -1,8 +1,13 @@
 Router.configure({
-	layoutTemplate		: 'editionLayout',
 	notFoundTemplate	: 'notFound',
-	loadingTemplate		: 'loading',
-	waitOn				: function() { return Meteor.subscribe('AmendementsByPosition') }
+	loadingTemplate		: 'loading'
 });
 
 Router.onBeforeAction('dataNotFound');
+
+Router.onBeforeAction(function() {
+	if (! Meteor.userId())
+		this.redirect('login');
+
+	this.next();
+});
