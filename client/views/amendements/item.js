@@ -13,6 +13,16 @@ Template.amendementsItem.helpers({
 			'positive'	: 'checkmark',
 			'negative'	: 'x'
 		}[position];
+	},
+	userOptionAttributes: function(currentUserId) {
+		var result = {
+			value: currentUserId
+		};
+
+		if (currentUserId == Template.instance().data.managerId)
+			result.selected = true;
+
+		return result;
 	}
 });
 

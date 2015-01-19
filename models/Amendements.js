@@ -14,6 +14,10 @@ Amendements.attachSchema(
 			type: String,
 			optional: true,
 			allowedValues: [ 'positive', 'negative' ]
+		},
+		managerId: {
+			type: String,
+			optional: true
 		}
 	})
 );
