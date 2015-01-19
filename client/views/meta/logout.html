@@ -1,5 +1,5 @@
 <template name="logout">
 	{{#if currentUser}}
-		<a href="{{pathFor 'login'}}">Se déconnecter</a>
+		<a href="{{pathFor 'login'}}">Déconnecter {{currentUser.username}}</a>
 	{{/if}}
 </template>
