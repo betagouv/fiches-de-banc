@@ -7,8 +7,8 @@ Router.configure({
 Router.onBeforeAction('dataNotFound');
 
 Router.onBeforeAction(function() {
-	 if (! Meteor.userId())
-		return this.render('login');
+	if (! Meteor.userId())
+		this.redirect('login');
 
 	this.next();
 });
