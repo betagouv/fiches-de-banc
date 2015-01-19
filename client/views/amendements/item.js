@@ -1,4 +1,12 @@
+Meteor.subscribe('Users.names');
+
 Template.amendementsItem.helpers({
+	manager: function() {
+		return Users.findOne(Template.instance().data.managerId);
+	},
+	users: function() {
+		return Meteor.users.find();
+	},
 	iconName: function(position) {
 		return {
 			'undefined'	: 'unknown',

@@ -28,6 +28,21 @@
 				Groupe
 			{{/if}}
 		</td>
+		<td class="manager">
+			{{#if _id}}
+				{{#if managerId}}
+					{{manager.username}}
+				{{else}}
+					<select name="manager">
+						{{#each users}}
+							<option value="{{_id}}">{{username}}</option>
+						{{/each}}
+					</select>
+				{{/if}}
+			{{else}}
+				Responsable
+			{{/if}}
+		</td>
 		<td class="position">
 			{{#if _id}}
 				<i class="{{iconName position}} icon" title="{{position}}"></i>
