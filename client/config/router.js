@@ -1,7 +1,6 @@
 Router.configure({
 	notFoundTemplate	: 'notFound',
-	loadingTemplate		: 'loading',
-	waitOn				: function() { return Meteor.subscribe('AmendementsByPosition') }
+	loadingTemplate		: 'loading'
 });
 
 Router.onBeforeAction('dataNotFound');
