@@ -22,18 +22,18 @@ Amendements.attachSchema(
 	})
 );
 
-// Collection2 already does schema checking
-// Add custom permission rules if needed
-if (Meteor.isServer) {
-	Amendements.allow({
-		insert : function () {
-			return true;
-		},
-		update : function () {
-			return true;
-		},
-		remove : function () {
-			return true;
-		}
-	});
+
+function yes() {
+	return true;
 }
+
+Amendements.deny({
+	insert: yes,
+	remove: yes
+});
+
+Amendements.allow({
+	update: function(userId, doc, fieldNames, modifier) {
+		return ! _.contains(fieldNames, 'amendement');
+	}
+});
