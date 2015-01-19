@@ -1,5 +1,12 @@
 # Fiches de bancs
 
+## Adding users
+
+Update the `server/private/Users.js` file.
+
+If it is not there, simply duplicate `server/fixtures/Users.js` into `server/private/Users.js` and update the contents.
+
+
 ## Structure
 
 ### Packages used

@@ -1,15 +1,10 @@
 function loadUser(user) {
-  var userAlreadyExists = typeof Meteor.users.findOne({ username : user.username }) === 'object';
+	if (Meteor.users.findOne({ username : user.username }))
+		return;
 
-  if (!userAlreadyExists) {
-    Accounts.createUser(user);
-  }
+	Accounts.createUser(user);
 }
 
-Meteor.startup(function () {
-  var users = YAML.eval(Assets.getText('users.yml'));
-
-  for (key in users) if (users.hasOwnProperty(key)) {
-    loadUser(users[key]);
-  }
+Meteor.startup(function() {
+	USERS.forEach(loadUser);
 });
