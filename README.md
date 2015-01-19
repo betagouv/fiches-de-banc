@@ -14,7 +14,6 @@
   * [dburles:collection-helpers](https://github.com/dburles/meteor-collection-helpers)
 * Accounts
   * [accounts-password](https://github.com/meteor/meteor/tree/devel/packages/accounts-password)
-  * [useraccounts:semantic-ui](https://github.com/meteor-useraccounts/semantic-ui)
 * UI and UX
   * [fastclick](https://github.com/meteor/meteor/tree/devel/packages/fastclick)
   * [meteorhacks:fast-render](https://github.com/meteorhacks/fast-render)

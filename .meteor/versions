@@ -73,7 +73,6 @@ service-configuration@1.0.3
 session@1.0.5
 sgmap:assemblee-nationale@0.0.1
 sha@1.0.2
-softwarerero:accounts-t9n@1.0.5
 spacebars@1.0.4
 spacebars-compiler@1.0.4
 srp@1.0.2
@@ -82,8 +81,6 @@ tracker@1.0.4
 ui@1.0.5
 underscore@1.0.2
 url@1.0.3
-useraccounts:core@1.4.1
-useraccounts:semantic-ui@1.4.1
 webapp@1.1.5
 webapp-hashing@1.0.2
 wizonesolutions:underscore-string@1.0.0
