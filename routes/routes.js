@@ -9,6 +9,6 @@ Router.route('/amendement/:_id', {
 	data			: function() { return Amendements.findOne(this.params._id) }
 });
 
-Router.route('/identification', {
+Router.route('/connexion', {
 	name			: 'login'
 });
