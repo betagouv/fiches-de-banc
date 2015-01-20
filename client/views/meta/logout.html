@@ -1,7 +1,5 @@
 <template name="logout">
 	{{#if currentUser}}
-		<a href="{{pathFor 'amendementsForUser' _id=currentUser._id}}">Mes fiches</a>
-		|
 		<a href="{{pathFor 'login'}}">Déconnecter {{currentUser.username}}</a>
 	{{/if}}
 </template>

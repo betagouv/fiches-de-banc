@@ -1,4 +1,13 @@
 <template name="amendementsList">
+	<div class="ui vertical demo menu">
+		<a href="{{pathFor 'amendementsList'}}" class="teal item">
+			Toutes les fiches
+		</a>
+		<a href="{{pathFor 'amendementsForUser' _id=currentUser._id}}" class="teal item">
+			Mes fiches
+			<div class="ui label">{{mineCount}}</div>
+		</a>
+	</div>
 	<table>
 		<thead>
 			{{> amendementsItem}}
