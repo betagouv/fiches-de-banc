@@ -44,10 +44,10 @@ Template.amendementsItem.events({
 		Amendements.update(template.data._id, { $set: { managerId: event.target.value } });
 	},
 
-	'keyup textarea': _.debounce(function(event, template) {
+	'keyup textarea': _.throttle(function(event, template) {
 		var setter = {};
 		setter[event.target.name] = event.target.value;
 
 		Amendements.update(template.data._id, { $set: setter });
-	}, 300)
+	}, 800)
 });
