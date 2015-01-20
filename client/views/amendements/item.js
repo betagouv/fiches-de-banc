@@ -38,14 +38,7 @@ Template.amendementsItem.events({
 	},
 
 	'change [name="manager"]': function(event, template) {
-		var manager = Meteor.users.findOne(event.target.value);
-
-		Amendements.update(template.data._id,
-			(manager
-			? { $set:	{ managerId: manager.id	} }
-			: { $unset:	{ managerId: ''			} }
-			)
-		);
+		Amendements.update(template.data._id, { $set: { managerId: event.target.value } });
 	},
 
 	'keyup textarea': _.debounce(function(event, template) {
