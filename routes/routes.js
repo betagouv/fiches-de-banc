@@ -2,7 +2,12 @@ Router.route('/', {
 	name			: 'amendementsList',
 	layoutTemplate	: 'editionLayout',
 	waitOn			: function() { return Meteor.subscribe('AmendementsByPosition') },
-	data			: function() { return Amendements.find() }
+	data			: function() {
+		return {
+			amendements	: Amendements.find(),
+			currentTab	: 'all'
+		}
+	}
 });
 
 Router.route('/utilisateur/:_id', {
@@ -10,7 +15,12 @@ Router.route('/utilisateur/:_id', {
 	template		: 'amendementsList',
 	layoutTemplate	: 'editionLayout',
 	waitOn			: function() { return Meteor.subscribe('AmendementsByPosition') },
-	data			: function() { return Amendements.find({ managerId: this.params._id }) }
+	data			: function() {
+		return {
+			amendements	: Amendements.find({ managerId: this.params._id }),
+			currentTab	: 'mine'
+		}
+	}
 });
 
 Router.route('/amendement/:_id', {
