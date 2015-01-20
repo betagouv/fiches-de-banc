@@ -12,28 +12,12 @@
 			<h2 id="author">{{_ 'proposedBy'}} <strong>{{content.auteurLabelFull}}</strong>{{#if content.auteurGroupe}} ({{_ 'party'}} <strong>{{content.auteurGroupe}}</strong>){{/if}}</h2>
 		</header>
 
-		{{#if summary}}
-			<section id="summary">
-				<h2>{{_ 'summary'}}</h2>
+		{{> fullpageSection name='summary'}}
 
-				{{summary}}
-			</section>
+		{{> fullpageSection name='talkingPoint'}}
 
-			<hr/>
-		{{/if}}
-
-		{{#if talkingPoint}}
-			<section id="talkingPoint">
-				<h2>{{_ 'talkingPoint'}}</h2>
-
-				{{talkingPoint}}
-			</section>
-
-			<hr/>
-		{{/if}}
-
-		<section id="amendement">
-			<h2>{{_ 'amendment'}}</h2>
+		<section class="ui segment" id="amendement">
+			<h3 class="ui top right attached label">{{_ 'amendment'}}</h3>
 			<iframe src="http://www.assemblee-nationale.fr/14/amendements/2447/CSCRACTIV/{{_id}}.pdf"> <!-- TODO: pull IDs from variables -->
 			</iframe>
 		</section>
