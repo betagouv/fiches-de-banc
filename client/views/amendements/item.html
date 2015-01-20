@@ -9,7 +9,7 @@
 		</td>
 		<th class="id">
 			{{#if _id}}
-				{{_id}}
+				<a href="{{pathFor 'amendementsFullpage' _id=_id}}">{{_id}}</a>
 			{{else}}
 				{{_ 'amendment'}}
 			{{/if}}
