@@ -36,19 +36,19 @@
 	border-top: 1px solid #6e5f00;
 }
 
-.positive, #fullpage footer.positive {
+#fullpage footer.positive {
 	background: #e3ffd8;
 	color: #376c38;
 	border-top: 1px solid #376c38;
 }
 
-.negative, #fullpage footer.negative {
+#fullpage footer.negative {
 	background-color: #ffe1e1;
 	color: #c02626;
 	border-top: 1px solid #c02626;
 }
 
-.ours, #fullpage footer.ours {
+#fullpage footer.ours {
 	background-color: #00b5ad;
 	color: #rgba(1, 1, 1, 0.9);
 	border-top: 1px solid #d4d4d5;
