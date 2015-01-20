@@ -45,6 +45,9 @@ Template.amendementsItem.events({
 	},
 
 	'keyup textarea': _.debounce(function(event, template) {
-		Amendements.update(template.data._id, { $set: { talkingPoint: event.target.value } });
+		var setter = {};
+		setter[event.target.name] = event.target.value;
+
+		Amendements.update(template.data._id, { $set: setter });
 	}, 300)
 });

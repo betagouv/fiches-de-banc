@@ -47,9 +47,16 @@
 				Position
 			{{/if}}
 		</td>
+		<td class="summary">
+			{{#if _id}}
+				<textarea name="summary" value="{{summary}}"></textarea>
+			{{else}}
+				Objet
+			{{/if}}
+		</td>
 		<td class="talkingPoint">
 			{{#if _id}}
-				<textarea value="{{talkingPoint}}"></textarea>
+				<textarea name="talkingPoint" value="{{talkingPoint}}"></textarea>
 			{{else}}
 				Éléments de langage
 			{{/if}}

@@ -18,6 +18,10 @@ Amendements.attachSchema(
 		managerId: {
 			type: String,
 			optional: true
+		},
+		summary: {
+			type: String,
+			optional: true
 		}
 	})
 );

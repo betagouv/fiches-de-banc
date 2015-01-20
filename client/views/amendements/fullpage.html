@@ -1,5 +1,5 @@
 <template name="amendementsFullpage">
-	<article id="fullpage" class="ui segment">
+	<section id="fullpage" class="ui segment">
 		<header>
 			<p class="ui top left attached label statistic">
 				<span class="label">Article</span>
@@ -12,14 +12,31 @@
 			<h2 id="author">Déposé par <strong>{{content.auteurLabelFull}}</strong>{{#if content.auteurGroupe}} (groupe <strong>{{content.auteurGroupe}}</strong>){{/if}}</h2>
 		</header>
 
-		<div id="talkingPoint">
-			{{talkingPoint}}
-		</div>
+		{{#if summary}}
+			<section id="summary">
+				<h2>Objet de l'amendement</h2>
 
-		<hr/>
+				{{summary}}
+			</section>
 
-		<iframe src="http://www.assemblee-nationale.fr/14/amendements/2447/CSCRACTIV/{{_id}}.pdf"> <!-- TODO: pull IDs from variables -->
-		</iframe>
+			<hr/>
+		{{/if}}
+
+		{{#if talkingPoint}}
+			<section id="talkingPoint">
+				<h2>Éléments de langage</h2>
+
+				{{talkingPoint}}
+			</section>
+
+			<hr/>
+		{{/if}}
+
+		<section id="amendement">
+			<h2>Amendement</h2>
+			<iframe src="http://www.assemblee-nationale.fr/14/amendements/2447/CSCRACTIV/{{_id}}.pdf"> <!-- TODO: pull IDs from variables -->
+			</iframe>
+		</section>
 
 		<footer class="ui segment {{position}}">
 			{{#if previous}}
@@ -36,5 +53,5 @@
 				</p>
 			{{/if}}
 		</footer>
-	</article>
+	</section>
 </template>
