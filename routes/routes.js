@@ -1,4 +1,10 @@
-Router.route('/', {
+Router.route('/', function() {
+	this.redirect('amendementsForUser', {
+		_id: Meteor.userId()
+	});
+});
+
+Router.route('/amendements', {
 	name			: 'amendementsList',
 	layoutTemplate	: 'editionLayout',
 	waitOn			: function() { return Meteor.subscribe('AmendementsByPosition') },
