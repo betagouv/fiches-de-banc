@@ -6,7 +6,7 @@ Router.route('/', {
 });
 
 Router.route('/utilisateur/:_id', {
-	name			: 'amendementsForUserList',
+	name			: 'amendementsForUser',
 	template		: 'amendementsList',
 	layoutTemplate	: 'editionLayout',
 	waitOn			: function() { return Meteor.subscribe('AmendementsByPosition') },
