@@ -12,10 +12,10 @@ table {
 	width: 100%;
 }
 
-tbody th {
-	width: 15%;
+tr .index, tr .id, tr .group {
+	width: 5%;
 }
 
-tbody .index, tbody .position, tbody .group, tbody .author {
-	width: 5%;
+tr .manager, tr .author {
+	width: 10%;
 }
