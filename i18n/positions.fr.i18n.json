@@ -1,0 +1,9 @@
+{
+	"positive"	: "Favorable",
+	"negative"	: "Défavorable",
+	"none"		: "Sagesse",
+	"remove"	: "Retrait",
+	"refine"	: "Sous-amendement",
+	"ours"		: "Amendement du gouvernement",
+	"undefined"	: "Indéfinie"
+}

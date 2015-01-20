@@ -11,15 +11,5 @@ Template.amendementsFullpage.helpers({
 		return Amendements.findOne({
 			'content.position': Template.instance().data.content.position - 1
 		});
-	},
-	_: function(position) {
-		return {
-			'positive'	: 'Favorable',
-			'negative'	: 'Défavorable',
-			'none'		: 'Sagesse',
-			'remove'	: 'Retrait',
-			'refine'	: 'Sous-amendement',
-			'ours'		: 'Amendement du gouvernement'
-		}[position] || 'Indéfinie';
 	}
 });
