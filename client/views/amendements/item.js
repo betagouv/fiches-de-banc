@@ -7,12 +7,15 @@ Template.amendementsItem.helpers({
 	users: function() {
 		return Meteor.users.find();
 	},
-	iconName: function(position) {
+	_: function(position) {
 		return {
-			'undefined'	: 'unknown',
-			'positive'	: 'checkmark',
-			'negative'	: 'x'
-		}[position];
+			'positive'	: 'Favorable',
+			'negative'	: 'Défavorable',
+			'none'		: 'Sagesse',
+			'remove'	: 'Retrait',
+			'refine'	: 'Sous-amendement',
+			'ours'		: 'Gouvernement'
+		}[position] || 'Indéfinie';
 	},
 	userOptionAttributes: function(currentUserId) {
 		var result = {

@@ -14,8 +14,12 @@ Template.amendementsFullpage.helpers({
 	},
 	_: function(position) {
 		return {
-			'positive': 'Favorable',
-			'negative': 'Défavorable'
+			'positive'	: 'Favorable',
+			'negative'	: 'Défavorable',
+			'none'		: 'Sagesse',
+			'remove'	: 'Retrait',
+			'refine'	: 'Sous-amendement',
+			'ours'		: 'Amendement du gouvernement'
 		}[position] || 'Indéfinie';
 	}
 });

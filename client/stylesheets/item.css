@@ -2,11 +2,6 @@
 	cursor: pointer;
 }
 
-i.icon.unknown::before {
-	content: "?";
-	font-weight: bold;
-}
-
 textarea {
 	width: 100%;
 	min-height: 12em;

@@ -13,7 +13,7 @@ Amendements.attachSchema(
 		position: {
 			type: String,
 			optional: true,
-			allowedValues: [ 'positive', 'negative' ]
+			allowedValues: [ 'positive', 'negative', 'none', 'remove', 'refine', 'ours' ]
 		},
 		managerId: {
 			type: String,
