@@ -14,14 +14,19 @@ Package.onUse(function(api) {
 	api.use('http', 'server');
 
 	api.addFiles('server/assembleeNationale.js', 'server');
+	api.addFiles('server/normalizers.js', 'server');
 
 	api.export('AssembleeNationale');
 });
 
 Package.onTest(function(api) {
 	api.use('coffeescript');
+	api.use('underscore');
 	api.use('tinytest');
 	api.use('peterellisjones:describe');
 	api.use('sgmap:assemblee-nationale');
+
+	api.addFiles('server/normalizers.js', 'server');
 	api.addFiles('test/assembleeNationale.coffee', 'server');
+	api.addFiles('test/normalizers.coffee', 'server');
 });

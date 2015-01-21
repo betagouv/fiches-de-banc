@@ -1,9 +1,21 @@
 function fichesLeft() {
-	return Amendements.find({ talkingPoint: { $exists: false } }).count();
+	return Amendements.find(_.extend({ talkingPoint: { $exists: false } }, Session.get('amendementsQuery'))) .count();
 }
 
 function fichesCount() {
-	return Amendements.find().count();
+	return Amendements.find(Session.get('amendementsQuery')).count();
+}
+
+
+Template.header.rendered = function() {
+	Tracker.autorun(function() {
+		//TODO: rate-limit
+		var leftRatio = fichesLeft() / fichesCount();
+
+		$('.progress').progress({
+			percent: Math.round(100 - leftRatio * 100)
+		});
+	});
 }
 
 Template.header.helpers({
@@ -16,14 +28,6 @@ Template.header.helpers({
 		return 'Encore';
 	},
 	fichesCount: function () {
-		var leftRatio = fichesLeft() / fichesCount();
-
-		_.debounce(function() {
-			$(Template.instance().find('.progress')).progress({
-				percent: Math.round(100 - leftRatio * 100)
-			});
-		}, 500);
-
 		return fichesCount();
 	},
 	fichesLeft: function () {
