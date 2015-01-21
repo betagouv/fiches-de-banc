@@ -1,13 +1,6 @@
 <template name="amendementsList">
-	<div class="ui vertical demo menu">
-		<a href="{{pathFor 'amendementsList'}}" class="teal item {{#if equals currentTab 'all'}}active{{/if}}">
-			{{_ 'allAmendments'}}
-		</a>
-		<a href="{{pathFor 'amendementsForUser' _id=currentUser._id}}" class="teal item {{#if equals currentTab 'mine'}}active{{/if}}">
-			{{_ 'myAmendments'}}
-			<div class="ui label">{{mineCount}}</div>
-		</a>
-	</div>
+	{{> amendementsFilter}}
+
 	<table>
 		<thead>
 			{{> amendementsItem}}

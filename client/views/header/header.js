@@ -1,9 +1,9 @@
 function fichesLeft() {
-	return Amendements.find({ talkingPoint: { $exists: false } }).count();
+	return Amendements.find(_.extend({ talkingPoint: { $exists: false } }, Session.get('amendementsQuery'))) .count();
 }
 
 function fichesCount() {
-	return Amendements.find().count();
+	return Amendements.find(Session.get('amendementsQuery')).count();
 }
 
 Template.header.helpers({

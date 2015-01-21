@@ -10,9 +10,11 @@ Router.route('/amendements', {
 	waitOn			: function() { return Meteor.subscribe('AmendementsByPosition') },
 	data			: function() {
 		return {
-			amendements	: Amendements.find(),
 			currentTab	: 'all'
 		}
+	},
+	onAfterAction	: function() {
+		Session.set('amendementsQuery', {});
 	}
 });
 
@@ -23,9 +25,11 @@ Router.route('/utilisateur/:_id', {
 	waitOn			: function() { return Meteor.subscribe('AmendementsByPosition') },
 	data			: function() {
 		return {
-			amendements	: Amendements.find({ managerId: this.params._id }),
 			currentTab	: 'mine'
 		}
+	},
+	onAfterAction	: function() {
+		Session.set('amendementsQuery', { managerId: this.params._id });
 	}
 });
 

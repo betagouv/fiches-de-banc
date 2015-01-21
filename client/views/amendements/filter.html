@@ -1,0 +1,24 @@
+<template name="amendementsFilter">
+	<ul class="ui vertical menu">
+		<li class="teal item {{#if equals currentTab 'all'}}active{{/if}}">
+			<a href="{{pathFor 'amendementsList'}}">
+				{{_ 'allAmendments'}}
+			</a>
+		</li>
+		<li class="teal item {{#if equals currentTab 'mine'}}active{{/if}}">
+			<a href="{{pathFor 'amendementsForUser' _id=currentUser._id}}">
+				{{_ 'myAmendments'}}
+			</a>
+			<div class="ui label">{{mineCount}}</div>
+		</li>
+		<li class="item">
+			<input name="article" type="search" placeholder="{{_ 'article'}}…">
+		</li>
+		{{!-- <div class="item">
+			<div class="ui transparent icon input">
+				<input id="search" type="search" placeholder="Rechercher un amendement…">
+				<i class="search icon"></i>
+			</div>
+		</div> --}}
+	</ul>
+</template>
