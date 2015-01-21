@@ -16,6 +16,11 @@
 				<input name="article" type="search" placeholder="{{_ 'article'}}…" value="{{query}}">
 				<i class="search icon"></i>
 			</div>
+			{{#if equals currentTab 'search'}}
+				{{#if resultsCount}}
+					<div class="ui label">{{resultsCount}}</div>
+				{{/if}}
+			{{/if}}
 		</li>
 	</ul>
 </template>

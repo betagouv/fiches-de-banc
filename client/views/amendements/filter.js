@@ -1,6 +1,9 @@
 Template.amendementsFilter.helpers({
 	mineCount: function() {
 		return Amendements.find({ managerId: Meteor.userId() }).count();
+	},
+	resultsCount: function() {
+		return Amendements.find(Session.get('amendementsQuery')).count();
 	}
 });
 
