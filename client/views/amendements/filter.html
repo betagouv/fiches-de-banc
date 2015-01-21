@@ -12,13 +12,10 @@
 			<div class="ui label">{{mineCount}}</div>
 		</li>
 		<li class="teal item {{#if equals currentTab 'search'}}active{{/if}}">
-			<input name="article" type="search" placeholder="{{_ 'article'}}…" value="{{query}}">
-		</li>
-		{{!-- <div class="item">
 			<div class="ui transparent icon input">
-				<input id="search" type="search" placeholder="Rechercher un amendement…">
+				<input name="article" type="search" placeholder="{{_ 'article'}}…" value="{{query}}">
 				<i class="search icon"></i>
 			</div>
-		</div> --}}
+		</li>
 	</ul>
 </template>
