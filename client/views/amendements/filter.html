@@ -11,8 +11,8 @@
 			</a>
 			<div class="ui label">{{mineCount}}</div>
 		</li>
-		<li class="item">
-			<input name="article" type="search" placeholder="{{_ 'article'}}…">
+		<li class="teal item {{#if equals currentTab 'search'}}active{{/if}}">
+			<input name="article" type="search" placeholder="{{_ 'article'}}…" value="{{query}}">
 		</li>
 		{{!-- <div class="item">
 			<div class="ui transparent icon input">
