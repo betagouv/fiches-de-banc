@@ -56,5 +56,5 @@ Template.amendementsItem.events({
 		setter[event.target.name] = event.target.value;
 
 		Amendements.update(template.data._id, { $set: setter });
-	}, 800)
+	}, 2000)
 });
