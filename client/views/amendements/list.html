@@ -1,14 +1,9 @@
 <template name="amendementsList">
 	{{> amendementsFilter}}
 
-	<table>
-		<thead>
+	<section class="ui segment">
+		{{#each amendements}}
 			{{> amendementsItem}}
-		</thead>
-		<tbody>
-			{{#each amendements}}
-				{{> amendementsItem}}
-			{{/each}}
-		</tbody>
-	</table>
+		{{/each}}
+	</section>
 </template>

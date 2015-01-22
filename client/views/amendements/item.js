@@ -1,5 +1,11 @@
 Meteor.subscribe('Users.names');
 
+
+Template.amendementsItem.rendered = function() {
+	this.$('select.dropdown').dropdown();
+}
+
+
 Template.amendementsItem.helpers({
 	manager: function() {
 		return Users.findOne(Template.instance().data.managerId);
