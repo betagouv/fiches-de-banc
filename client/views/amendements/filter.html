@@ -1,25 +1,11 @@
 <template name="amendementsFilter">
-	<ul id="filter" class="ui vertical menu">
-		<li class="all teal item {{#if equals currentTab 'all'}}active{{/if}}">
-			<a href="{{pathFor 'amendementsList'}}">
-				{{_ 'allAmendments'}}
-			</a>
-		</li>
+	<ul id="filter" class="ui menu">
 		<li class="mine teal item {{#if equals currentTab 'mine'}}active{{/if}}">
 			<a href="{{pathFor 'amendementsForUser' _id=currentUser._id}}">
 				{{_ 'myAmendments'}}
 			</a>
-			<div class="ui label">{{mineCount}}</div>
-		</li>
-		<li class="search teal item {{#if equals currentTab 'search'}}active{{/if}}">
-			<div class="ui transparent icon input">
-				<input name="article" type="search" placeholder="{{_ 'article'}}…" value="{{query}}">
-				<i class="search icon"></i>
-			</div>
-			{{#if equals currentTab 'search'}}
-				{{#if resultsCount}}
-					<div class="ui label">{{resultsCount}}</div>
-				{{/if}}
+			{{#if mineCount}}
+				<div class="ui label">{{mineCount}}</div>
 			{{/if}}
 		</li>
 		<li class="print item {{#if equals currentTab 'print'}}active{{/if}}">
@@ -32,5 +18,26 @@
 			</a>
 			<i class="print icon"></i>
 		</li>
+		<div class="right menu">
+			{{#if equals currentTab 'search'}}
+				{{#if resultsCount}}
+					<div class="item">
+						<div class="ui label">{{resultsCount}}</div>
+					</div>
+				{{/if}}
+			{{/if}}
+			<li class="search teal item {{#if equals currentTab 'search'}}active{{/if}}">
+				<div class="ui transparent icon input">
+					<input name="article" type="search" placeholder="{{_ 'article'}}…" value="{{query}}">
+					<i class="search icon"></i>
+				</div>
+			</li>
+			<li class="logout teal item">
+				<a href="{{pathFor 'login'}}">{{_ 'logoutLink'}} {{currentUser.username}}</a>
+			</li>
+		</div>
 	</ul>
+	<div class="ui bottom attached small indicating progress">
+		<div class="bar"></div>
+	</div>
 </template>
