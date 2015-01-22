@@ -8,5 +8,8 @@ Template.lastUpdate.helpers({
 	format: function(date) {
 		Template.instance().timer.depend();
 		return moment(date).fromNow();
+	},
+	stringify: function(json) {
+		return JSON.stringify(json);
 	}
 });
