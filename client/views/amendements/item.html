@@ -1,65 +1,45 @@
 <template name="amendementsItem">
-	<tr>
-		<td class="index">
-			{{#if _id}}
-				{{content.position}}
-			{{else}}
-				{{_ 'index'}}
-			{{/if}}
-		</td>
-		<th class="id">
-			{{#if _id}}
-				<a href="{{pathFor 'amendementsFullpage' _id=_id}}">{{_id}}</a>
-			{{else}}
-				{{_ 'amendment'}}
-			{{/if}}
-		</th>
-		<td class="author">
-			{{#if _id}}
-				{{content.auteurLabelFull}}
-			{{else}}
-				{{_ 'author'}}
-			{{/if}}
-		</td>
-		<td class="group">
-			{{#if _id}}
-				{{content.auteurGroupe}}
-			{{else}}
-				{{_ 'party'}}
-			{{/if}}
-		</td>
-		<td class="manager">
-			{{#if _id}}
-				<select name="manager">
-					<option value="">— {{_ 'noManager'}} —</option>
-					{{#each users}}
-						<option {{userOptionAttributes _id}}>{{username}}</option>
-					{{/each}}
-				</select>
-			{{else}}
-				{{_ 'manager'}}
-			{{/if}}
-		</td>
-		<td class="position">
-			{{#if _id}}
-				{{_ position}}
-			{{else}}
-				{{_ 'position'}}
-			{{/if}}
-		</td>
-		<td class="summary">
-			{{#if _id}}
-				<textarea name="summary" value="{{summary}}"></textarea>
-			{{else}}
-				{{_ 'summary'}}
-			{{/if}}
-		</td>
-		<td class="talkingPoint">
-			{{#if _id}}
-				<textarea name="talkingPoint" value="{{talkingPoint}}"></textarea>
-			{{else}}
-				{{_ 'talkingPoint'}}
-			{{/if}}
-		</td>
-	</tr>
+	<article class="fiche ui vertical segment {{#unless talkingPoint}}red{{/unless}}">
+		{{> amendmentInfo}}
+
+		<div class="content">
+			<div class="summary">
+				{{#if isEditing}}
+					<textarea name="summary"></textarea>
+				{{else}}
+					{{#if summary}}
+						{{summary}}
+					{{else}}
+						<em>{{_ 'noSummary'}}</em>
+					{{/if}}
+				{{/if}}
+			</div>
+
+			<div class="talkingPoint">
+				{{#if isEditing}}
+					<textarea name="talkingPoint"></textarea>
+				{{else}}
+					{{#if talkingPoint}}
+						{{talkingPoint}}
+					{{else}}
+						<em>{{_ 'noTalkingPoint'}}</em>
+					{{/if}}
+				{{/if}}
+			</div>
+
+			<div class="ui form">
+				<div class="ui field">
+					<p class="position">{{_ 'position'}}{{{_ 'colon'}}} {{_ position}}</p>
+				</div>
+				<div class="ui field">
+					<select name="manager" class="ui search dropdown">
+						<option value="">— {{_ 'noManager'}} —</option>
+						{{#each users}}
+							<option {{userOptionAttributes _id}}>{{username}}</option>
+						{{/each}}
+					</select>
+				</div>
+			</div>
+		</div>
+	</article>
 </template>

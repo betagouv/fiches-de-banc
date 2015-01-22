@@ -1,0 +1,17 @@
+<template name="amendementsPrintableList">
+	{{> amendementsFilter}}
+
+
+	{{#if printableAmendements.count}}
+		<h1>{{_ 'amendmentsBelowWillBePrinted' count=printableAmendements.count}}</h1>
+	{{else}}
+		<h1>{{_ 'noAmendmentsWillBePrinted'}}</h1>
+		<h3 class="backlink"><a href="{{pathFor 'search'}}">{{_ 'searchForAmendmentsThatHaveTalkingPoints'}}</a></h3>
+	{{/if}}
+
+	<div class="printList">
+		{{#each printableAmendements}}
+			{{> amendementsFullpage}}
+		{{/each}}
+	</div>
+</template>

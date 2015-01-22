@@ -1,0 +1,47 @@
+.print.active {
+	-webkit-animation: bluePulse 3s infinite;
+	   -moz-animation: bluePulse 3s infinite;
+			animation: bluePulse 3s infinite;
+}
+
+@media screen {
+	.printList .fullPage > *, .printList .fullPage > header .author {
+		display: none;
+	}
+
+	.printList .fullPage > header {
+		display: flex;
+		text-align: center;
+	}
+
+	.printList .fullPage > header div {
+		-webkit-flex: 1 1 auto;
+			-ms-flex: 1 1 auto;
+				flex: 1 1 auto;
+	}
+}
+
+@media print {
+	h1, #print, #filter {
+		display: none;
+	}
+}
+
+
+@-webkit-keyframes bluePulse {
+	from	{ background-color: #007d9a; box-shadow: 0 0 9px #333; }
+	50%		{ background-color: #2daebf; box-shadow: 0 0 18px #2daebf; }
+	to		{ background-color: #007d9a; box-shadow: 0 0 9px #333; }
+}
+
+@-moz-keyframes bluePulse {
+	from	{ background-color: #007d9a; box-shadow: 0 0 9px #333; }
+	50%		{ background-color: #2daebf; box-shadow: 0 0 18px #2daebf; }
+	to		{ background-color: #007d9a; box-shadow: 0 0 9px #333; }
+}
+
+@keyframes bluePulse {
+	from	{ background-color: #007d9a; box-shadow: 0 0 9px #333; }
+	50%		{ background-color: #2daebf; box-shadow: 0 0 18px #2daebf; }
+	to		{ background-color: #007d9a; box-shadow: 0 0 9px #333; }
+}

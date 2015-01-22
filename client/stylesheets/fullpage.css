@@ -1,64 +1,109 @@
-#fullpage {
-	height: 100%;
+.fullPage header {
+	display:	-webkit-flex;
+	display:			flex;
+	font-size: 150%;
 }
 
-#fullpage h2 {
+.fullPage header .author {
+	-webkit-flex: 1 1 auto;
+		-ms-flex: 1 1 auto;
+			flex: 1 1 auto;
+
+	text-align: center;
+	font-size: 100%;
 	font-weight: lighter;
+	margin-top: 0;
 }
 
-#fullpage iframe {
+.fullPage section {
+	font-size: 130%;
+	columns: 2;
+}
+
+.fullPage iframe {
 	margin: 0;
 	width: 100%;
 	height: 50%;
 }
 
-#fullpage #author {
-	margin-top: .5em;
-	text-align: center;
+.fullPage footer .next, .fullPage footer .previous {
+	position: absolute;
+	top: 0;
+	background-color: #BBB;
+	height: 100%;
+	padding: 0 .5em;
+	border-color: black;
 }
 
-#fullpage section {
-	font-size: 130%;
-	columns: 2;
-}
-
-#fullpage footer {
-	position: fixed;
-	width: 100%;
-	bottom: 0;
+.fullPage footer .previous {
 	left: 0;
-	text-align: center;
+	border-right: 1px solid;
 }
 
-#fullpage footer {
-	background: #fff9d7;
-	color: #6e5f00;
-	border-top: 1px solid #6e5f00;
+.fullPage footer .next {
+	right: 0;
+	border-left: 1px solid;
 }
 
-#fullpage footer.positive {
-	background: #e3ffd8;
-	color: #376c38;
-	border-top: 1px solid #376c38;
+.fullPage footer .ui.statistic.amendment > .text.value {
+	min-height: .5em;
+	height: .5em;
 }
 
-#fullpage footer.negative {
-	background-color: #ffe1e1;
-	color: #c02626;
-	border-top: 1px solid #c02626;
+@media screen {
+	.fullPage footer {
+		background: #fff9d7;
+		color: #6e5f00;
+		border-top: 1px solid #6e5f00;
+	}
+
+	.fullPage footer.positive {
+		background: #e3ffd8;
+		color: #376c38;
+		border-top: 1px solid #376c38;
+	}
+
+	.fullPage footer.negative {
+		background-color: #ffe1e1;
+		color: #c02626;
+		border-top: 1px solid #c02626;
+	}
+
+	.fullPage footer.ours {
+		background-color: #00b5ad;
+		color: #rgba(1, 1, 1, 0.9);
+		border-top: 1px solid #d4d4d5;
+	}
+
+	.fullPage footer {
+		position: fixed;
+		width: 100%;
+		bottom: 0;
+		left: 0;
+		text-align: center;
+		padding-bottom: 1.5em;
+	}
+
+	.print-only {
+		display: none;
+	}
 }
 
-#fullpage footer.ours {
-	background-color: #00b5ad;
-	color: #rgba(1, 1, 1, 0.9);
-	border-top: 1px solid #d4d4d5;
-}
+@media print {
+	.fullPage header {
+		font-size: 120%;
+	}
 
-#fullpage #position {
-	font-size: 200%;
-	margin: .25em 0;
-}
+	.fullPage .amendment, .fullPage footer .next, .fullPage footer .previous {
+		display: none;
+	}
 
-#fullpage #positionValue {
-	font-weight: bold;
+	.fullPage {
+		page-break-after: always;
+	}
+
+	.position {
+		margin-top: 1em;
+		border: 2px solid black;
+	}
 }

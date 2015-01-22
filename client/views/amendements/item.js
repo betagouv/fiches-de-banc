@@ -1,11 +1,17 @@
 Meteor.subscribe('Users.names');
 
+
+Template.amendementsItem.rendered = function() {
+	this.$('select.dropdown').dropdown();
+}
+
+
 Template.amendementsItem.helpers({
 	manager: function() {
 		return Users.findOne(Template.instance().data.managerId);
 	},
 	users: function() {
-		return Meteor.users.find();
+		return Meteor.users.find({}, { sort: { username: 1 } });
 	},
 	userOptionAttributes: function(currentUserId) {
 		var result = {
@@ -16,6 +22,9 @@ Template.amendementsItem.helpers({
 			result.selected = true;
 
 		return result;
+	},
+	isEditing: function() {
+		return Session.get('edited') == Template.instance().data._id;
 	}
 });
 
@@ -32,6 +41,14 @@ Template.amendementsItem.events({
 
 	'change [name="manager"]': function(event, template) {
 		Amendements.update(template.data._id, { $set: { managerId: event.target.value } });
+	},
+
+	'click .summary, click .talkingPoint': function(event, template) {
+		Session.set('edited', template.data._id);
+		Meteor.setTimeout(function() {
+			template.$('textarea[name="summary"]').val(template.data.summary);
+			template.$('textarea[name="talkingPoint"]').val(template.data.talkingPoint);
+		}, 200);
 	},
 
 	'keyup textarea': _.throttle(function(event, template) {

@@ -1,0 +1,9 @@
+.position {
+	margin-top: 1em;
+	font-size: 150%;
+	font-weight: bold;
+}
+
+.position .label {
+	font-weight: lighter;
+}

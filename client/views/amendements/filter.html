@@ -1,17 +1,17 @@
 <template name="amendementsFilter">
-	<ul class="ui vertical menu">
-		<li class="teal item {{#if equals currentTab 'all'}}active{{/if}}">
+	<ul id="filter" class="ui vertical menu">
+		<li class="all teal item {{#if equals currentTab 'all'}}active{{/if}}">
 			<a href="{{pathFor 'amendementsList'}}">
 				{{_ 'allAmendments'}}
 			</a>
 		</li>
-		<li class="teal item {{#if equals currentTab 'mine'}}active{{/if}}">
+		<li class="mine teal item {{#if equals currentTab 'mine'}}active{{/if}}">
 			<a href="{{pathFor 'amendementsForUser' _id=currentUser._id}}">
 				{{_ 'myAmendments'}}
 			</a>
 			<div class="ui label">{{mineCount}}</div>
 		</li>
-		<li class="teal item {{#if equals currentTab 'search'}}active{{/if}}">
+		<li class="search teal item {{#if equals currentTab 'search'}}active{{/if}}">
 			<div class="ui transparent icon input">
 				<input name="article" type="search" placeholder="{{_ 'article'}}…" value="{{query}}">
 				<i class="search icon"></i>
@@ -21,6 +21,16 @@
 					<div class="ui label">{{resultsCount}}</div>
 				{{/if}}
 			{{/if}}
+		</li>
+		<li class="print item {{#if equals currentTab 'print'}}active{{/if}}">
+			<a href="{{pathFor 'amendementsPrintableList'}}">
+				{{#if equals currentTab 'print'}}
+					{{_ 'startPrinting'}}
+				{{else}}
+					{{_ 'print'}}
+				{{/if}}
+			</a>
+			<i class="print icon"></i>
 		</li>
 	</ul>
 </template>

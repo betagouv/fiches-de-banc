@@ -1,0 +1,9 @@
+<template name="amendmentInfo">
+	<div class="ui statistic amendment">
+		<div class="label">{{_ 'index'}} {{content.position}}</div>
+		<h3 class="text value">
+			<a href="{{pathFor 'amendementsFullpage' _id=_id}}">{{_id}}</a>
+		</h3>
+		<div class="label">{{content.place.raw}}</div>
+	</div>
+</template>
