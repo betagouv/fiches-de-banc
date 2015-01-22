@@ -1,4 +1,4 @@
-# Fiches de bancs
+# Fiches de banc
 
 ## Adding users
 
