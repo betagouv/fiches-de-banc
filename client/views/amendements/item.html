@@ -1,5 +1,5 @@
 <template name="amendementsItem">
-	<article class="fiche ui vertical segment {{#unless talkingPoint}}red{{/unless}}">
+	<article class="fiche ui vertical segment {{#if talkingPoint}}done{{/if}}">
 		{{> amendmentInfo}}
 
 		<div class="content">

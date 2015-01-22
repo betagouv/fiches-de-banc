@@ -46,3 +46,11 @@ textarea {
 	min-height: 12em;
 	resize: vertical;
 }
+
+.fiche .amendment h3 a {
+	color: red;
+}
+
+.fiche.done .amendment h3 a {
+	color: green;
+}
