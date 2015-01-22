@@ -1,41 +1,42 @@
 <template name="amendementsFullpage">
-	<section id="fullpage" class="ui segment">
+	<section class="fullPage ui segment">
 		<header>
-			<p class="ui top left attached label statistic">
-				<span class="label">{{_ 'article'}}</span>
-				<span class="value text">{{article}}</span>
-			</p>
-			<p class="ui top right attached label statistic">
-				<span class="label">{{_ 'amendment'}}</span>
-				<span class="value text">{{_id}}</span>
-			</p>
-			<h2 id="author">{{_ 'proposedBy'}} <strong>{{content.auteurLabelFull}}</strong>{{#if content.auteurGroupe}} ({{_ 'party'}} <strong>{{content.auteurGroupe}}</strong>){{/if}}</h2>
+			<div>{{content.place.raw}}</div>
+
+			<h2 class="author">
+				{{_ 'proposedBy'}} <strong>{{content.auteurLabelFull}}</strong>
+
+				{{#if content.auteurGroupe}}
+					({{_ 'party'}}&nbsp;<strong>{{content.auteurGroupe}}</strong>)
+				{{/if}}
+			</h2>
+
+			<div>{{_id}}</div>
 		</header>
 
 		{{> fullpageSection name='summary'}}
 
+		<div class="print-only">{{> position}}</div>
+
 		{{> fullpageSection name='talkingPoint'}}
 
-		<section class="ui segment" id="amendement">
-			<h3 class="ui top right attached label">{{_ 'amendment'}}</h3>
-			<iframe src="http://www.assemblee-nationale.fr/14/amendements/2447/CSCRACTIV/{{_id}}.pdf"> <!-- TODO: pull IDs from variables -->
-			</iframe>
-		</section>
+		{{> fullpageSection name='amendment' iframeTarget=amendmentUrl}}
 
-		<footer class="ui segment {{position}}">
-			{{#if previous}}
-				<p class="ui bottom left attached label">
-					<a href="{{pathFor 'amendementsFullpage' _id=previous._id}}">❮&nbsp;{{_ 'amendment'}} {{previous._id}}</a>
-				</p>
-			{{/if}}
+		<footer class="{{position}}">
+			<nav>
+				{{#if previous}}
+					<a class="previous" href="{{pathFor 'amendementsFullpage' _id=previous._id}}">
+						{{> amendmentInfo previous}}
+					</a>
+				{{/if}}
+				{{#if next}}
+					<a class="next" href="{{pathFor 'amendementsFullpage' _id=next._id}}">
+						{{> amendmentInfo next}}
+					</a>
+				{{/if}}
+			</nav>
 
 			{{> position}}
-
-			{{#if next}}
-				<p class="ui bottom right attached label">
-					<a href="{{pathFor 'amendementsFullpage' _id=next._id}}">{{_ 'amendment'}} {{next._id}}&nbsp;❯</a>
-				</p>
-			{{/if}}
 		</footer>
 	</section>
 </template>

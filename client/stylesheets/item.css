@@ -32,7 +32,7 @@
 	text-align: right;
 }
 
-.fiche .ui.statistic > .text.value {
+.ui.statistic.amendment > .text.value {
 	min-height: 1em;
 	height: 1em;
 }

@@ -9,7 +9,9 @@
 		<h3 class="backlink"><a href="{{pathFor 'search'}}">{{_ 'searchForAmendmentsThatHaveTalkingPoints'}}</a></h3>
 	{{/if}}
 
-	{{#each printableAmendements}}
-		{{> amendementsPrintableItem}}
-	{{/each}}
+	<div class="printList">
+		{{#each printableAmendements}}
+			{{> amendementsFullpage}}
+		{{/each}}
+	</div>
 </template>

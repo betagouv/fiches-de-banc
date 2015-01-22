@@ -1,12 +1,6 @@
 <template name="amendementsItem">
 	<article class="fiche ui vertical segment {{#unless talkingPoint}}red{{/unless}}">
-		<div class="ui statistic">
-			<div class="label">{{_ 'index'}} {{content.position}}</div>
-			<h3 class="text value">
-				<a href="{{pathFor 'amendementsFullpage' _id=_id}}">{{_id}}</a>
-			</h3>
-			<div class="label">{{content.place.raw}}</div>
-		</div>
+		{{> amendmentInfo}}
 
 		<div class="content">
 			<div class="summary">

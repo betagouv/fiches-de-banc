@@ -1,9 +1,11 @@
 <template name="fullpageSection">
-	{{#if content}}
-		<section class="ui segment" id="{{name}}">
-			<h3 class="ui top right attached label">{{_ name}}</h3>
-
+	<h3 class="{{name}} ui horizontal divider header">{{_ name}}</h3>
+	<section class="{{name}}">
+		{{#if content}}
 			{{content}}
-		</section>
-	{{/if}}
+		{{/if}}
+		{{#if iframeTarget}}
+			<iframe src="{{iframeTarget}}"></iframe>
+		{{/if}}
+	</section>
 </template>

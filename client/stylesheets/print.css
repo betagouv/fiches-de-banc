@@ -4,47 +4,29 @@
 			animation: bluePulse 3s infinite;
 }
 
-.fiche-print header div:first-child {
-	float: left;
-}
+@media screen {
+	.printList .fullPage > *, .printList .fullPage > header .author {
+		display: none;
+	}
 
-.fiche-print header div:last-child {
-	float: right;
-}
+	.printList .fullPage > header {
+		display: flex;
+		text-align: center;
+	}
 
+	.printList .fullPage > header div {
+		-webkit-flex: 1 1 auto;
+			-ms-flex: 1 1 auto;
+				flex: 1 1 auto;
+	}
+}
 
 @media print {
 	h1, #print, #filter {
 		display: none;
 	}
-
-	.fiche-print {
-		page-break-after: always;
-	}
-
-	.fiche-print header {
-		border-bottom: 1px solid black;
-	}
-
-	.fiche-print .summary, .fiche-print .talkingPoint .position {
-		border: 2px solid black;
-	}
 }
 
-@media screen {
-	.fiche-print > * {
-		display: none;
-	}
-
-	.fiche-print > header {
-		margin: auto;
-		min-width: 40em;
-		width: 50%;
-		font-size: 120%;
-		display: block;
-		clear: both;
-	}
-}
 
 @-webkit-keyframes bluePulse {
 	from	{ background-color: #007d9a; box-shadow: 0 0 9px #333; }
