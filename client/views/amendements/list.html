@@ -1,9 +1,14 @@
 <template name="amendementsList">
 	{{> menu}}
 
-	<section class="ui segment">
-		{{#each amendements}}
-			{{> amendementsItem}}
-		{{/each}}
-	</section>
+	{{#if amendements.count}}
+		<section class="ui segment">
+			{{#each amendements}}
+				{{> amendementsItem}}
+			{{/each}}
+		</section>
+	{{else}}
+		<h1>Aucun amendement correspondant à ces critères</h1>
+		<h3 class="backlink"><a href="{{pathFor 'search' query='q=1'}}">Effectuez une recherche pour en afficher</a></h3>
+	{{/if}}
 </template>
