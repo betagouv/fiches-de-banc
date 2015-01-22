@@ -1,4 +1,9 @@
-<template name="editionLayout">
+<template name="mainLayout">
+	<header>
+		{{> menu}}
+		{{> progressBar}}
+	</header>
+
 	<main class="dimmable">
 		{{> yield}}
 	</main>

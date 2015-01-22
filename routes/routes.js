@@ -6,7 +6,7 @@ Router.route('/', function() {
 
 Router.route('/amendements', {
 	name			: 'amendementsList',
-	layoutTemplate	: 'editionLayout',
+	layoutTemplate	: 'mainLayout',
 	waitOn			: function() { return Meteor.subscribe('AmendementsByPosition') },
 	data			: function() {
 		return {
@@ -21,7 +21,7 @@ Router.route('/amendements', {
 Router.route('/utilisateur/:_id', {
 	name			: 'amendementsForUser',
 	template		: 'amendementsList',
-	layoutTemplate	: 'editionLayout',
+	layoutTemplate	: 'mainLayout',
 	waitOn			: function() { return Meteor.subscribe('AmendementsByPosition') },
 	data			: function() {
 		return {
@@ -36,7 +36,7 @@ Router.route('/utilisateur/:_id', {
 Router.route('/recherche', {
 	name			: 'search',
 	template		: 'amendementsList',
-	layoutTemplate	: 'editionLayout',
+	layoutTemplate	: 'mainLayout',
 	waitOn			: function() { return Meteor.subscribe('AmendementsByPosition') },
 	data			: function() {
 		return {
@@ -73,6 +73,7 @@ Router.route('/amendement/:_id', {
 });
 
 Router.route('/imprimer', {
+	layoutTemplate	: 'mainLayout',
 	name			: 'amendementsPrintableList',
 	waitOn			: function() { return Meteor.subscribe('AmendementsByPosition') },
 	data			: function() {
