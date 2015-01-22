@@ -5,3 +5,10 @@ footer.metadata {
 	background-color: black;
 	color: white;
 }
+
+footer.metadata img {
+	margin-left: -2em;
+	margin-right: 1em;
+	float: right;
+	height: 2.2em;
+}
