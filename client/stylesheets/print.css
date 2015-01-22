@@ -22,7 +22,7 @@
 }
 
 @media print {
-	h1, #print, #menu, #progressBar {
+	h1, #print, #menu, #progressBar, .metadata {
 		display: none;
 	}
 }
