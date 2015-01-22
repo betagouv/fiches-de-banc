@@ -1,5 +1,7 @@
 # Fiches de banc
 
+Une application web permettant d'émettre des avis sur les amendements déposés à l'Assemblée Nationale, et de répartir les réponses parmi plusieurs collaborateurs.
+
 ## Adding users
 
 Update the `server/private/Users.js` file.
