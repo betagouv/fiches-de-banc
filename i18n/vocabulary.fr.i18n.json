@@ -2,7 +2,6 @@
 	"article": "Article",
 	"amendment": "Amendement",
 	"summary": "Objet de l'amendement",
-	"toHandle": "Amendement à traiter",
 	"talkingPoint": "Éléments de langage",
 	"proposedBy": "Déposé par",
 	"party": "Groupe",
@@ -10,5 +9,7 @@
 	"author": "Auteur",
 	"manager": "Responsable",
 	"noManager": "Aucun responsable",
-	"position": "Position"
+	"position": "Position",
+	"noSummary": "Pas d'objet",
+	"noTalkingPoint": "Pas d'éléments de langage"
 }
