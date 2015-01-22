@@ -6,7 +6,6 @@ Router.route('/', function() {
 
 Router.route('/amendements', {
 	name			: 'amendementsList',
-	layoutTemplate	: 'mainLayout',
 	waitOn			: function() { return Meteor.subscribe('AmendementsByPosition') },
 	data			: function() {
 		return {
@@ -21,7 +20,6 @@ Router.route('/amendements', {
 Router.route('/utilisateur/:_id', {
 	name			: 'amendementsForUser',
 	template		: 'amendementsList',
-	layoutTemplate	: 'mainLayout',
 	waitOn			: function() { return Meteor.subscribe('AmendementsByPosition') },
 	data			: function() {
 		return {
@@ -36,7 +34,6 @@ Router.route('/utilisateur/:_id', {
 Router.route('/recherche', {
 	name			: 'search',
 	template		: 'amendementsList',
-	layoutTemplate	: 'mainLayout',
 	waitOn			: function() { return Meteor.subscribe('AmendementsByPosition') },
 	data			: function() {
 		return {
@@ -65,6 +62,7 @@ Router.route('/recherche', {
 });
 
 Router.route('/amendement/:_id', {
+	layoutTemplate	: null,
 	name			: 'amendementsFullpage',
 	waitOn			: function() { return Meteor.subscribe('AmendementsByPosition') },
 	data			: function() {
@@ -73,7 +71,6 @@ Router.route('/amendement/:_id', {
 });
 
 Router.route('/imprimer', {
-	layoutTemplate	: 'mainLayout',
 	name			: 'amendementsPrintableList',
 	waitOn			: function() { return Meteor.subscribe('AmendementsByPosition') },
 	data			: function() {
@@ -84,5 +81,6 @@ Router.route('/imprimer', {
 });
 
 Router.route('/connexion', {
+	layoutTemplate	: null,
 	name			: 'login'
 });
