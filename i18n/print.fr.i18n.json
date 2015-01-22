@@ -1,5 +1,7 @@
 {
-	"amendmentsBelowWillBePrinted": "L’amendement ci-dessous sera imprimé",
-	"amendmentsBelowWillBePrinted_plural": "Les __count__ amendements ci-dessous seront imprimés",
-	"startPrinting": "Lancer l'impression"
+	"amendmentsBelowWillBePrinted": "L’amendement ci-dessous sera imprimé :",
+	"amendmentsBelowWillBePrinted_plural": "Les __count__ amendements ci-dessous seront imprimés :",
+	"noAmendmentsWillBePrinted": "Aucun amendement ne sera imprimé.",
+	"startPrinting": "Lancer l'impression",
+	"searchForAmendmentsThatHaveTalkingPoints": "Recherchez un article pour lequel des fiches de banc ont été rédigées."
 }
