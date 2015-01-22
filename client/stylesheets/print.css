@@ -1,0 +1,65 @@
+.print.active {
+	-webkit-animation: bluePulse 3s infinite;
+	   -moz-animation: bluePulse 3s infinite;
+			animation: bluePulse 3s infinite;
+}
+
+.fiche-print header div:first-child {
+	float: left;
+}
+
+.fiche-print header div:last-child {
+	float: right;
+}
+
+
+@media print {
+	h1, #print, #filter {
+		display: none;
+	}
+
+	.fiche-print {
+		page-break-after: always;
+	}
+
+	.fiche-print header {
+		border-bottom: 1px solid black;
+	}
+
+	.fiche-print .summary, .fiche-print .talkingPoint .position {
+		border: 2px solid black;
+	}
+}
+
+@media screen {
+	.fiche-print > * {
+		display: none;
+	}
+
+	.fiche-print > header {
+		margin: auto;
+		min-width: 40em;
+		width: 50%;
+		font-size: 120%;
+		display: block;
+		clear: both;
+	}
+}
+
+@-webkit-keyframes bluePulse {
+	from	{ background-color: #007d9a; box-shadow: 0 0 9px #333; }
+	50%		{ background-color: #2daebf; box-shadow: 0 0 18px #2daebf; }
+	to		{ background-color: #007d9a; box-shadow: 0 0 9px #333; }
+}
+
+@-moz-keyframes bluePulse {
+	from	{ background-color: #007d9a; box-shadow: 0 0 9px #333; }
+	50%		{ background-color: #2daebf; box-shadow: 0 0 18px #2daebf; }
+	to		{ background-color: #007d9a; box-shadow: 0 0 9px #333; }
+}
+
+@keyframes bluePulse {
+	from	{ background-color: #007d9a; box-shadow: 0 0 9px #333; }
+	50%		{ background-color: #2daebf; box-shadow: 0 0 18px #2daebf; }
+	to		{ background-color: #007d9a; box-shadow: 0 0 9px #333; }
+}

@@ -1,4 +1,8 @@
 <template name="amendementsPrintableList">
+	{{> amendementsFilter}}
+
+	<h1>{{_ 'amendmentsBelowWillBePrinted' count=printableAmendements.count}}{{{_ 'colon'}}}</h1>
+
 	{{#each printableAmendements}}
 		{{> amendementsPrintableItem}}
 	{{/each}}
