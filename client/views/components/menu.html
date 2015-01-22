@@ -1,5 +1,5 @@
-<template name="amendementsFilter">
-	<ul id="filter" class="ui menu">
+<template name="menu">
+	<ul id="menu" class="ui menu">
 		<li class="mine teal item {{#if equals currentTab 'mine'}}active{{/if}}">
 			<a href="{{pathFor 'amendementsForUser' _id=currentUser._id}}">
 				{{_ 'myAmendments'}}

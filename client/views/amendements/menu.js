@@ -1,4 +1,4 @@
-Template.amendementsFilter.helpers({
+Template.menu.helpers({
 	mineCount: function() {
 		return Amendements.find({
 			managerId		: Meteor.userId(),
@@ -13,7 +13,7 @@ Template.amendementsFilter.helpers({
 	}
 });
 
-Template.amendementsFilter.events({
+Template.menu.events({
 	'keyup [name="article"]': _.debounce(function(event, template) {
 		Router.go('search', {}, { query: 'q=' + event.target.value });
 	}, 300),

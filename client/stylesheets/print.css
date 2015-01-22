@@ -22,7 +22,7 @@
 }
 
 @media print {
-	h1, #print, #filter {
+	h1, #print, #menu {
 		display: none;
 	}
 }
