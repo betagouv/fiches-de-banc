@@ -22,5 +22,9 @@
 				{{/if}}
 			{{/if}}
 		</li>
+		<li class="item icon {{#if equals currentTab 'print'}}active{{/if}}">
+			<a href="{{pathFor 'amendementsPrintableList'}}">{{_ 'print'}}</a>
+			<i class="print icon"></i>
+		</li>
 	</ul>
 </template>

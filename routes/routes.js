@@ -72,6 +72,11 @@ Router.route('/amendement/:_id', {
 	}
 });
 
+Router.route('/imprimer', {
+	name			: 'amendementsPrintableList',
+	waitOn			: function() { return Meteor.subscribe('AmendementsByPosition') }
+});
+
 Router.route('/connexion', {
 	name			: 'login'
 });
