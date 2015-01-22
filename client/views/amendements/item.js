@@ -11,7 +11,7 @@ Template.amendementsItem.helpers({
 		return Users.findOne(Template.instance().data.managerId);
 	},
 	users: function() {
-		return Meteor.users.find();
+		return Meteor.users.find({}, { sort: { username: 1 } });
 	},
 	userOptionAttributes: function(currentUserId) {
 		var result = {
