@@ -1,9 +1,15 @@
 Template.amendementsFilter.helpers({
 	mineCount: function() {
-		return Amendements.find({ managerId: Meteor.userId() }).count();
+		return Amendements.find({
+			managerId		: Meteor.userId(),
+			talkingPoint	: { $exists: false }
+		}).count();
 	},
 	resultsCount: function() {
-		return Amendements.find(Session.get('amendementsQuery')).count();
+		return Amendements.find(_.extend(
+			{ talkingPoint	: { $exists: false } },
+			Session.get('amendementsQuery')
+		)).count();
 	}
 });
 
