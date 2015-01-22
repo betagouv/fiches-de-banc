@@ -1,3 +1,5 @@
 {
+	"password": "Mot de passe",
+	"email": "Adresse email",
 	"loginButton": "S'identifier"
 }

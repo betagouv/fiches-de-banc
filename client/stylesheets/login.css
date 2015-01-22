@@ -1,0 +1,14 @@
+#login {
+	padding-top: 3em;
+	margin: auto;
+	max-width: 30em;
+}
+
+#login button {
+	width: 100%;
+}
+
+#login + footer {
+	position: fixed;
+	bottom: 0;
+}

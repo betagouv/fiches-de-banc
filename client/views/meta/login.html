@@ -1,7 +1,23 @@
 <template name="login">
-	<form method="post" action="{{pathFor 'amendementsList'}}">
-		<input placeholder="votre.email@gouv.fr" name="email" type="email">
-		<input name="password" type="password">
-		<button type="submit">{{_ 'loginButton'}}</button>
+	<form id="login" method="post" action="{{pathFor 'amendementsList'}}" class="ui form">
+		<div class="field">
+			<label>{{_ 'email'}}</label>
+			<div class="ui icon input">
+				<input placeholder="votre.email@gouv.fr" name="email" type="email">
+				<i class="user icon"></i>
+			</div>
+		</div>
+		<div class="field">
+			<label>{{_ 'password'}}</label>
+			<div class="ui icon input">
+				<input name="password" type="password">
+				<i class="lock icon"></i>
+			</div>
+		</div>
+		<button class="ui button primary" type="submit">{{_ 'loginButton'}}</button>
 	</form>
+
+	<footer class="metadata">
+		{{> footer}}
+	</footer>
 </template>
