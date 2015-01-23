@@ -2,56 +2,31 @@
 
 Une application web permettant d'émettre des avis sur les amendements déposés à l'Assemblée Nationale, et de répartir les réponses parmi plusieurs collaborateurs.
 
-## Adding users
+
+## Usage
+
+Le processus de base est le suivant : en m’identifiant comme conseiller (test@test.com / herpaderp), j’ai un accès direct aux fiches de banc que je dois rédiger. Un compteur m’indique en permanence celles qu’il me reste à traiter, et je peux donc consulter l’application à mon rythme.
+En tant qu’assistant, je peux également attribuer des fiches à des conseillers. Tout conseiller peut réattribuer ses fiches s’il connaît un conseiller plus à même de traiter l’amendement.
+À tout moment, je peux utiliser le champ de recherche pour lister les fiches de banc associées à un article (« 23 ») ou à d’autres éléments du projet de loi (« titre », « chapitre IV »…). Un compteur m’indique le nombre de fiches restant à rédiger.
+Je peux dès lors imprimer les fiches rédigées parmi la liste affichée en cliquant sur « imprimer ». Cette liste conservera toujours l’ordre d’examen de l’Assemblée, ce qui évite les innombrables réordonnancements des liasses  :)
+Enfin, en cliquant sur le numéro d’un amendement, j’accède à une vue numérique de la fiche de banc. C’est cette vue numérique qui pourrait être utilisée par le ministre depuis une tablette. Vous noterez également que toute modification est répercutée en temps réel sur toutes les vues. Il devient donc possible de modifier des éléments de langage dix minutes avant la discussion de l’amendement sans devoir courir pour déplacer du papier.
+
+
+## Running the application
+
+This application uses the [Meteor](https://www.meteor.com) framework. You will need to install Meteor to get this application to work.
+
+Once this is done, simply:
+
+```shell
+    $ git clone git://github.com:sgmap/fiches-de-banc.git
+    $ cd fiches-de-banc
+    $ meteor
+```
+
+
+### Adding users
 
 Update the `server/private/Users.js` file.
 
 If it is not there, simply duplicate `server/fixtures/Users.js` into `server/private/Users.js` and update the contents.
-
-
-## Structure
-
-### Packages used
-
-* Meteor Core
-  * meteor-platform
-* Routing
-  * [iron:router](https://github.com/EventedMind/iron-router)
-  * [zimme:iron-router-active](https://github.com/zimme/meteor-iron-router-active)
-* Collections
-  * [aldeed:collection2](https://github.com/aldeed/meteor-collection2)
-* Accounts
-  * [accounts-password](https://github.com/meteor/meteor/tree/devel/packages/accounts-password)
-* UI and UX
-  * [fastclick](https://github.com/meteor/meteor/tree/devel/packages/fastclick)
-  * [nooitaf:semantic-ui](https://github.com/nooitaf/meteor-semantic-ui)
-* Security
-  * [browser-policy](https://github.com/meteor/meteor/tree/devel/packages/browser-policy)
-  * [matteodem:easy-security](https://github.com/matteodem/meteor-easy-security)
-* Development
-  * [jquery](https://github.com/meteor/meteor/tree/devel/packages/jquery)
-  * [underscore](https://github.com/meteor/meteor/tree/devel/packages/underscore)
-
-### Folder structure
-
-```
-client/ 				# Client folder
-    compatibility/      # Libraries which create a global variable
-    config/             # Configuration files (on the client)
-	lib/                # Library files that get executed first
-    startup/            # Javascript files on Meteor.startup()
-    stylesheets         # LESS files
-    modules/            # Meant for components, such as form and more
-	views/			    # Contains all views
-	    common/         # General purpose html templates
-model/  				# Model files, for each Meteor.Collection
-private/                # Private files
-public/                 # Public files
-routes/                 # All routes
-server/					# Server folder
-    fixtures/           # Meteor.Collection fixtures defined
-    lib/                # Server side library folder
-    publications/       # Collection publications
-    startup/            # On server startup
-meteor-boilerplate		# Command line tool
-```
