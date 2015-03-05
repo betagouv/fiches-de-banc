@@ -64,7 +64,7 @@ retry@1.0.2
 routepolicy@1.0.4
 service-configuration@1.0.3
 session@1.0.5
-sgmap:assemblee-nationale@0.0.1
+sgmap:assemblee-nationale@1.0.0
 sha@1.0.2
 spacebars@1.0.5
 spacebars-compiler@1.0.4
