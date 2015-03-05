@@ -3,7 +3,7 @@ Fixtures = typeof Fixtures !== 'undefined' ? Fixtures : {};
 Fixtures.Amendements = [
 	{
 		_id: 'SPE862',
-		content: firstAmendement = {
+		content: {
 			'place': 'Article PREMIER',
 			'numero': 'SPE862',
 			'sort': 'Adopté',
@@ -26,7 +26,7 @@ Fixtures.Amendements = [
 	},
 	{
 		_id: 'SPE1263',
-		content: firstAmendement = {
+		content: {
 			'place': 'Article PREMIER',
 			'numero': 'SPE1263',
 			'sort': 'Rejeté',
