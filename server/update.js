@@ -1,5 +1,5 @@
 AssembleeNationale.update = function() {
-	AssembleeNationale.getAmendements('2498', 'AN', '14', function(error, amendements) {
+	AssembleeNationale.getAmendements('3318', 'CION_LOIS', '14', function(error, amendements) {
 		var updatedCount = 0;
 
 		if (! error) {
