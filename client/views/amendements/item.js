@@ -13,6 +13,16 @@ Template.amendementsItem.helpers({
 	users: function() {
 		return Meteor.users.find({}, { sort: { username: 1 } });
 	},
+	amendmentUrl: function() {
+		return [
+			'http://www.assemblee-nationale.fr',
+			Meteor.settings.public.legislature,
+			'amendements',
+			Meteor.settings.public.textId,
+			Meteor.settings.public.organismId,
+			Template.instance().data._id + '.pdf'
+		].join('/');
+	},
 	userOptionAttributes: function(currentUserId) {
 		var result = {
 			value: currentUserId
