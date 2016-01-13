@@ -3,7 +3,14 @@ Template.amendementsFullpage.helpers({
 		return Template.instance().data.content.place.replace(/ ?Article ?/i, '')
 	},
 	amendmentUrl: function() {
-		return 'http://www.assemblee-nationale.fr/14/amendements/2498/AN/' + Template.instance().data._id + '.pdf';	// TODO: pull variables from config
+		return [
+			'http://www.assemblee-nationale.fr',
+			Meteor.settings.public.legislature,
+			'amendements',
+			Meteor.settings.public.textId,
+			Meteor.settings.public.organismId,
+			Template.instance().data._id + '.pdf'
+		].join('/');
 	},
 	next: function() {
 		return Amendements.findOne({

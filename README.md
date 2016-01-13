@@ -16,17 +16,25 @@ Enfin, en cliquant sur le numéro d’un amendement, j’accède à une vue num�
 
 This application uses the [Meteor](https://www.meteor.com) framework. You will need to install Meteor to get this application to work.
 
-Once this is done, simply:
+### Clone the code
 
 ```shell
     $ git clone git://github.com:sgmap/fiches-de-banc.git
     $ cd fiches-de-banc
-    $ meteor
 ```
 
+### Select the law project
 
-### Adding users
+Update `settings.json` according to the [documentation of the `sgmap:assemblee-nationale` package](https://github.com/sgmap/meteor-assemblee-nationale#identifying-a-project-law).
+
+
+### Add users
 
 Update the `server/private/Users.js` file.
 
 If it is not there, simply duplicate `server/fixtures/Users.js` into `server/private/Users.js` and update the contents.
+
+
+### Run the application
+
+`meteor --settings settings.json`
