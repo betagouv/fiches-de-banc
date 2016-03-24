@@ -18,3 +18,4 @@ peerlibrary:xml2js
 sgmap:assemblee-nationale
 momentjs:moment
 tap:i18n
+force-ssl
