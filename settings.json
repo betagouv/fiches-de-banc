@@ -3,5 +3,10 @@
 		"textId": 3318,
 		"organismId": "CION_LOIS",
 		"legislature": 14
+	},
+	"galaxy.meteor.com": {
+		"env": {
+			"MONGO_URL": "mongodb://fiches-de-banc:secret_password@ds053828.mlab.com:53828/fiches-de-banc"
+		}
 	}
 }

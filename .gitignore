@@ -3,3 +3,4 @@
 
 # Private data
 server/private/Users.js
+settings-*.json

@@ -38,3 +38,10 @@ If it is not there, simply duplicate `server/fixtures/Users.js` into `server/pri
 ### Run the application
 
 `meteor --settings settings.json`
+
+
+### Deploying
+
+Demo currently hosted on [Galaxy](https://galaxy.meteor.com) with [mLab](https://mlab.com/) database, on @MattiSG's accounts.
+
+See `settings.json` and [how to deploy an app to Galaxy](https://galaxy.meteor.com/help/deploying-to-galaxy) for more information.
