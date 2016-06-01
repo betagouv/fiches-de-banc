@@ -42,6 +42,8 @@ If it is not there, simply duplicate `server/fixtures/Users.js` into `server/pri
 
 ### Deploying
 
-Demo currently hosted on [Galaxy](https://galaxy.meteor.com) with [mLab](https://mlab.com/) database, on @MattiSG's accounts.
+This application is deployed with [`mupx`](https://github.com/arunoda/meteor-up/tree/mupx).
 
-See `settings.json` and [how to deploy an app to Galaxy](https://galaxy.meteor.com/help/deploying-to-galaxy) for more information.
+To deploy it, [install `mupx`](https://github.com/arunoda/meteor-up/tree/mupx), and `mupx deploy`.
+
+If you want to deploy to a new server, update the access configuration in `mup.json`, and run `mup setup`.

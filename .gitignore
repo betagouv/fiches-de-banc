@@ -1,5 +1,6 @@
 .idea/*
 .DS_Store
+.vagrant
 
 # Private data
 server/private/Users.js
