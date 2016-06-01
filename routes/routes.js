@@ -1,4 +1,7 @@
 Router.route('/', function() {
+	if (! Meteor.userId())
+		return this.redirect('login');
+
 	this.redirect('amendementsForUser', {
 		_id: Meteor.userId()
 	});
