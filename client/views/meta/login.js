@@ -6,7 +6,10 @@ Template.login.events({
 		Meteor.loginWithPassword(
 			template.find('[name="email"]').value,
 			template.find('[name="password"]').value,
-			function() {
+			function(error) {
+				if (error)
+					console.log(error);
+
 				Router.go('amendementsForUser', {
 					_id: Meteor.userId()
 				});
