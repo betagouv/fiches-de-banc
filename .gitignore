@@ -1,7 +1,10 @@
 .idea/*
 .DS_Store
-.vagrant
 
 # Private data
 server/private/Users.js
 settings-*.json
+
+# Vagrant
+.vagrant
+Vagrantfile

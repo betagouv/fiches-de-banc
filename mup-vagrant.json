@@ -1,0 +1,35 @@
+// A very simple Vagrantfile is enough with this setup:
+//
+// Vagrant.configure(2) do |config|
+//   config.vm.box = "ubuntu/trusty64"
+//   config.vm.network "forwarded_port", guest: 80, host: 3000
+// end
+//
+// You will need to `meteor remove force-ssl` for your local deployment to work, though.
+
+
+{
+  "servers": [
+    {
+      "host": "127.0.0.1",
+      "username": "vagrant",
+      "password": "vagrant",
+      // WARNING: Keys protected by a passphrase are not supported
+      // "pem": "~/.ssh/id_rsa",
+      "sshOptions": { "port" : 2222 },
+      // server specific environment variables
+      "env": {}
+    }
+  ],
+
+  "appName": "fiches-de-banc",
+  "app": ".",
+  "env": {
+    "PORT": 80,
+    "ROOT_URL": "http://127.0.0.1:3000"
+  },
+
+  "setupMongo": true,
+  "deployCheckWaitTime": 15,  // seconds
+  "enableUploadProgressBar": true  // set to false on CI
+}
