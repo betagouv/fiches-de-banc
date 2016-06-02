@@ -1,9 +1,4 @@
 USERS = typeof USERS !== 'undefined' ? USERS : [];
 
-USERS = USERS.concat([
-	{
-		"username": "Test",
-		"email": "test@test.com",
-		"password": "herpaderp"
-	}
-]);
+if (Meteor.settings.public.demo)
+	USERS = USERS.concat(Meteor.settings.public.demo);

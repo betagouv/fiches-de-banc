@@ -1,0 +1,12 @@
+{
+	"public": {
+		"textId": 3318,
+		"organismId": "CION_LOIS",
+		"legislature": 14,
+		"demo": {
+			"username": "Test",
+			"email": "test@beta.gouv.fr",
+			"password": "test"
+		}
+	}
+}

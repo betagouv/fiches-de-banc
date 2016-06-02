@@ -1,5 +1,6 @@
 {
 	"password": "Mot de passe",
 	"email": "Adresse email",
-	"loginButton": "S'identifier"
+	"loginButton": "S'identifier",
+	"demo": "Dans cette version de démonstration, vous pouvez utiliser l'identifiant <code>__username__</code> et le mot de passe <code>__password__</code> pour essayer l'application."
 }

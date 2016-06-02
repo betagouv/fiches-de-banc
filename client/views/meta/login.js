@@ -18,3 +18,9 @@ Template.login.events({
 		event.preventDefault();
 	}
 });
+
+Template.login.helpers({
+	demo: function() {
+		return Meteor.settings.public.demo;
+	},
+});

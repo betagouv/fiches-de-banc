@@ -1,16 +1,20 @@
 <template name="login">
 	<form id="login" method="post" action="{{pathFor 'amendementsList'}}" class="ui form">
+		{{#if demo}}
+			<small>{{{_ 'demo' username=demo.email password=demo.password}}}</small>
+		{{/if}}
+
 		<div class="field">
 			<label>{{_ 'email'}}</label>
 			<div class="ui icon input">
-				<input placeholder="votre.email@gouv.fr" name="email" type="email">
+				<input placeholder="votre.email@gouv.fr" name="email" type="email" value="{{demo.email}}">
 				<i class="user icon"></i>
 			</div>
 		</div>
 		<div class="field">
 			<label>{{_ 'password'}}</label>
 			<div class="ui icon input">
-				<input name="password" type="password">
+				<input name="password" type="password" value="{{demo.password}}">
 				<i class="lock icon"></i>
 			</div>
 		</div>
