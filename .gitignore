@@ -8,3 +8,7 @@ settings-*.json
 # Vagrant
 .vagrant
 Vagrantfile
+
+# Deployment to production and SSL
+*.pem
+*.crt
