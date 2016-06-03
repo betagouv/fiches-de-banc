@@ -1,0 +1,25 @@
+{
+  "servers": [
+    {
+      "host": "vps286488.ovh.net",
+      "username": "root",
+      "pem": "./fiches-de-banc.pem"
+    }
+  ],
+
+  "appName": "fiches-de-banc",
+  "app": ".",
+  "env": {
+    "PORT": 80,
+    "ROOT_URL": "https://fiches-de-banc.beta.gouv.fr"
+  },
+  "ssl": {
+    // This file is obtained, with LetsEncrypt, with:
+    // ssh root@vps286488.ovh.net "certbot-auto renew" && scp root@vps286488.ovh.net:/etc/letsencrypt/live/fiches-de-banc.beta.gouv.fr/fullchain.pem fullchain.pem && scp root@vps286488.ovh.net:/etc/letsencrypt/live/fiches-de-banc.beta.gouv.fr/privkey.pem privkey.pem && cat fullchain.pem privkey.pem > bundle.crt
+    "certificate": "./bundle.crt",
+    "key": "./privkey.pem"
+  },
+  "setupMongo": true,
+  "deployCheckWaitTime": 15,  // seconds
+  "enableUploadProgressBar": true  // set to false on CI
+}

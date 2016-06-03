@@ -3,3 +3,12 @@
 
 # Private data
 server/private/Users.js
+settings-*.json
+
+# Vagrant
+.vagrant
+Vagrantfile
+
+# Deployment to production and SSL
+*.pem
+*.crt

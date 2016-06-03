@@ -38,3 +38,31 @@ If it is not there, simply duplicate `server/fixtures/Users.js` into `server/pri
 ### Run the application
 
 `meteor --settings settings.json`
+
+
+### Deploying
+
+#### On your own server
+
+This application is deployed with [`mupx`](https://github.com/arunoda/meteor-up/tree/mupx).
+
+1. [Install `mupx`](https://github.com/arunoda/meteor-up/tree/mupx).
+2. Duplicate the `mup-vagrant.json` file, renaming the copy `mup.json` and setting your own server information.
+3. Run `mupx setup` to install the dependencies on the server.
+4. Run `mupx deploy` to deploy a production instance, and add `--settings=settings-demo.json` to run an instance with demo users.
+
+#### On Heroku
+
+You can also [deploy this application to Heroku](https://medium.com/@leonardykris/how-to-run-a-meteor-js-application-on-heroku-in-10-steps-7aceb12de234):
+
+```shell
+APP_NAME="fiches-de-banc"
+heroku login
+heroku apps:create $APP_NAME
+heroku buildpacks:set https://github.com/jordansissel/heroku-buildpack-meteor.git
+heroku addons:create mongolab:sandbox
+heroku config:add MONGO_URL=`heroku config | grep MONGODB_URI | cut -d ':' -f 2- | tr -d ' '`
+heroku config:add ROOT_URL="https://$APP_NAME.herokuapp.com"
+heroku config:add METEOR_SETTINGS="`cat settings.json`"  # use settings-demo.json to run an instance with demo users
+git push heroku master
+```
