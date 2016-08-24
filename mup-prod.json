@@ -14,8 +14,8 @@
     "ROOT_URL": "https://fiches-de-banc.beta.gouv.fr"
   },
   "ssl": {
-    // This file is obtained, with LetsEncrypt, with:
-    // ssh root@vps286488.ovh.net "certbot-auto renew" && scp root@vps286488.ovh.net:/etc/letsencrypt/live/fiches-de-banc.beta.gouv.fr/fullchain.pem fullchain.pem && scp root@vps286488.ovh.net:/etc/letsencrypt/live/fiches-de-banc.beta.gouv.fr/privkey.pem privkey.pem && cat fullchain.pem privkey.pem > bundle.crt
+    // This file is obtained, with LetsEncrypt. So, to renew the certificate, execute:
+    // mupx stop --settings=settings-demo.json --config=mup-prod.json && ssh root@vps286488.ovh.net 'certbot/certbot-auto renew' && scp root@vps286488.ovh.net:/etc/letsencrypt/live/fiches-de-banc.beta.gouv.fr/fullchain.pem fullchain.pem && scp root@vps286488.ovh.net:/etc/letsencrypt/live/fiches-de-banc.beta.gouv.fr/privkey.pem privkey.pem && cat fullchain.pem privkey.pem > bundle.crt && mupx setup --settings=settings-demo.json --config=mup-prod.json && mupx deploy --settings=settings-demo.json --config=mup-prod.json
     "certificate": "./bundle.crt",
     "key": "./privkey.pem"
   },
